@@ -39,15 +39,15 @@ public class TodoItemController {
 
    @GetMapping(Mappings.ADD_ITEM)
    public String addEditItem(Model model) {
-        TodoItem todoItem = new TodoItem("", "", LocalDate.now());
-        model.addAttribute(AttributeNames.TODO_ITEM, todoItem);
-        return ViewNames.ADD_ITEM;
+        TodoItem todoItem = new TodoItem("", "", LocalDate.now()); // makes a brand new item with empty fields
+        model.addAttribute(AttributeNames.TODO_ITEM, todoItem); // will add the item as a attribute for the page
+        return ViewNames.ADD_ITEM; // points to the jsp file we have
     }
 
    @PostMapping(Mappings.ADD_ITEM)
    public String processItem(@ModelAttribute(AttributeNames.TODO_ITEM) TodoItem todoItem) {
         log.info("todoItem from form = {}", todoItem);
         todoItemService.addItem(todoItem);
-        return "redirect:/" + Mappings.ITEMS;
+        return "redirect:/" + Mappings.ITEMS; // redirects to the items list view
    }
 }
