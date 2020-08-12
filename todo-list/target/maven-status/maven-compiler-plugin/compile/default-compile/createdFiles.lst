@@ -9,4 +9,5 @@ academy\learnprogramming\config\WebAppInitializer.class
 academy\learnprogramming\service\DemoService.class
 academy\learnprogramming\util\Mappings.class
 academy\learnprogramming\service\TodoItemServiceImpl.class
+academy\learnprogramming\util\AttributeNames.class
 academy\learnprogramming\util\ViewNames.class
